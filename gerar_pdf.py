@@ -26,24 +26,42 @@ def criar_pdf(titulo_pdf, conteudo):
     nome_arquivo = re.sub(r'[\\/*?:"<>|]', "", titulo_pdf.replace(" ", "_")) + ".pdf"
     pdf.output(nome_arquivo)
 
-titulo = "Tags Semânticas no HTML"
-conteudo = """Tags Semânticas no HTML
-As tags semânticas são fundamentais para dar significado ao conteúdo da sua página e melhorar a acessibilidade e a otimização para motores de busca (SEO). Elas descrevem o propósito de cada parte do conteúdo, facilitando a leitura por humanos e máquinas.
+titulo = "Centralizando Elementos no CSS"
+conteudo = """Centralizando Elementos no CSS
+Centralizar elementos é uma necessidade comum no design de interfaces. Existem várias técnicas para isso no CSS, cada uma adequada para um tipo específico de elemento.
+Centralização de Texto com text-align: Para centralizar texto dentro de um bloco, use:
 
-8. Tags Semânticas Importantes
-Header: Representa o cabeçalho da página.
-Nav: Define um conjunto de links de navegação.
-Main: Representa o conteúdo principal da página.
-Section: Representa uma seção de conteúdo.
-Footer: Define o rodapé da página.
+.texto {
+  text-align: center;
+}
 
-9. Outras Tags Semânticas
-Article: Indica um artigo ou conteúdo independente.
-Aside: Representa conteúdo relacionado, como barras laterais ou informações complementares.
-Figure e Figcaption: Usadas para agrupar imagens e suas descrições.
-Address: Representa informações de contato, como endereços e números de telefone.
+Centralização com margin: auto: Para centralizar blocos, como divs, defina um valor fixo de largura e aplique margin: auto:
 
-Com o uso das tags semânticas, você garante que seu HTML seja mais fácil de ler e compreender, tanto para outros desenvolvedores quanto para os algoritmos de indexação.
+.bloco {
+  width: 300px;
+  margin: 0 auto;
+}
+
+Centralização com position e transform: Para centralizar elementos verticalmente, use position em conjunto com transform:
+
+.caixa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+Essa técnica é útil para elementos que precisam ser posicionados de maneira exata no centro da tela.
+Centralização com Flexbox: Embora flexbox seja um assunto mais avançado, vale a pena mencioná-lo como a forma mais simples e poderosa de centralizar elementos horizontal e verticalmente ao mesmo tempo:
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+Cada método tem suas vantagens e desvantagens, e escolher o mais apropriado depende do contexto e do tipo de elemento a ser centralizado.
 """
 
 criar_pdf(titulo, conteudo)
