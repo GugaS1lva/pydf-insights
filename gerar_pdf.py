@@ -26,31 +26,24 @@ def criar_pdf(titulo_pdf, conteudo):
     nome_arquivo = re.sub(r'[\\/*?:"<>|]', "", titulo_pdf.replace(" ", "_")) + ".pdf"
     pdf.output(nome_arquivo)
 
-titulo = "Desenvolvimento Gradual e Refatoração"
-conteudo = """Desenvolvimento Gradual e Refatoração
-O desenvolvimento gradual e a refatoração são duas práticas essenciais para manter o código limpo ao longo do tempo. O desenvolvimento gradual sugere que você não precisa tentar resolver tudo de uma vez. Em vez disso, você deve criar soluções simples que podem ser melhoradas ao longo do tempo.
+titulo = "Tags Semânticas no HTML"
+conteudo = """Tags Semânticas no HTML
+As tags semânticas são fundamentais para dar significado ao conteúdo da sua página e melhorar a acessibilidade e a otimização para motores de busca (SEO). Elas descrevem o propósito de cada parte do conteúdo, facilitando a leitura por humanos e máquinas.
 
-A refatoração é o processo de reescrever o código sem modificar sua funcionalidade, mas melhorando sua estrutura e legibilidade. Refatorar periodicamente é importante para evitar que o código se torne confuso ou ineficiente.
+8. Tags Semânticas Importantes
+Header: Representa o cabeçalho da página.
+Nav: Define um conjunto de links de navegação.
+Main: Representa o conteúdo principal da página.
+Section: Representa uma seção de conteúdo.
+Footer: Define o rodapé da página.
 
-Dicas para refatoração eficiente:
-1 - Pequenas mudanças: Não tente refatorar um grande bloco de código de uma só vez. Refatore gradualmente, garantindo que cada mudança seja testada.
-2 - Priorize simplicidade: Sempre que possível, busque simplificar o código. Remova duplicações, reduza funções longas e elimine variáveis desnecessárias.
-3 - Teste sempre: Após refatorar, certifique-se de que o comportamento do código permaneça o mesmo, verificando com testes unitários ou funcionais.
+9. Outras Tags Semânticas
+Article: Indica um artigo ou conteúdo independente.
+Aside: Representa conteúdo relacionado, como barras laterais ou informações complementares.
+Figure e Figcaption: Usadas para agrupar imagens e suas descrições.
+Address: Representa informações de contato, como endereços e números de telefone.
 
-Exemplo de refatoração:
-Antes:
-function calcularDesconto(preco, desconto) {
-  if (desconto > 0) {
-    return preco - (preco * desconto);
-  } else {
-    return preco;
-  }
-}
-
-Após refatoração:
-function calcularDesconto(preco, desconto) {
-  return desconto > 0 ? preco - (preco * desconto) : preco;
-}
+Com o uso das tags semânticas, você garante que seu HTML seja mais fácil de ler e compreender, tanto para outros desenvolvedores quanto para os algoritmos de indexação.
 """
 
 criar_pdf(titulo, conteudo)
