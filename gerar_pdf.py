@@ -22,21 +22,22 @@ def criar_pdf(titulo_pdf, conteudo):
     nome_arquivo = re.sub(r'[\\/*?:"<>|]', "", titulo_pdf.replace(" ", "_")) + ".pdf"
     pdf.output(nome_arquivo)
 
-titulo = "Variáveis no CSS"
-conteudo = """Variáveis no CSS
-As variáveis CSS são uma adição recente e poderosa que permite definir valores reutilizáveis no estilo. Elas facilitam a manutenção e permitem alterar valores de maneira centralizada.
-Definindo variáveis:
+titulo = "Flexbox: Estruturação de Layouts Flexíveis"
+conteudo = """Flexbox: Estruturação de Layouts Flexíveis
+O Flexbox é uma das ferramentas mais poderosas e flexíveis para construir layouts CSS. Ele permite distribuir o espaço entre os itens e controlar seu alinhamento de maneira eficiente, mesmo em layouts responsivos e dinâmicos.
+Conceitos-chave:
+display: flex; — Define um contêiner flexível e transforma seus filhos em itens flexíveis.
+justify-content — Controla o alinhamento horizontal.
+align-items — Controla o alinhamento vertical.
+Exemplo:
 
-:root {
-  --cor-principal: #3498db;
-  --tamanho-texto: 16px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-h1 {
-  color: var(--cor-principal);
-  font-size: var(--tamanho-texto);
-}
-
-As variáveis podem ser redefinidas em diferentes contextos, permitindo criar temas dinâmicos. O uso de variáveis facilita a atualização de estilos e garante consistência visual em grandes projetos."""
+Aqui, todos os itens dentro do .container serão centralizados vertical e horizontalmente. Flexbox é especialmente útil para criar layouts de colunas e alinhar elementos dentro de um contêiner."""
 
 criar_pdf(titulo, conteudo)
