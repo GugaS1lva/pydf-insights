@@ -26,42 +26,13 @@ def criar_pdf(titulo_pdf, conteudo):
     nome_arquivo = re.sub(r'[\\/*?:"<>|]', "", titulo_pdf.replace(" ", "_")) + ".pdf"
     pdf.output(nome_arquivo)
 
-titulo = "Centralizando Elementos no CSS"
-conteudo = """Centralizando Elementos no CSS
-Centralizar elementos é uma necessidade comum no design de interfaces. Existem várias técnicas para isso no CSS, cada uma adequada para um tipo específico de elemento.
-Centralização de Texto com text-align: Para centralizar texto dentro de um bloco, use:
+titulo = "Incorporando Vídeos com iframe"
+conteudo = """Incorporando Vídeos com iframe
+A tag <iframe> é usada para inserir outra página HTML dentro de uma página principal, funcionando como uma "janela" que mostra o conteúdo de um site externo. Um dos usos mais comuns do <iframe> é incorporar vídeos de plataformas como YouTube e Vimeo, tornando o processo de inclusão de mídia mais leve e prático.
+Exemplo:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NcGnLdUPnpo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-.texto {
-  text-align: center;
-}
-
-Centralização com margin: auto: Para centralizar blocos, como divs, defina um valor fixo de largura e aplique margin: auto:
-
-.bloco {
-  width: 300px;
-  margin: 0 auto;
-}
-
-Centralização com position e transform: Para centralizar elementos verticalmente, use position em conjunto com transform:
-
-.caixa {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-Essa técnica é útil para elementos que precisam ser posicionados de maneira exata no centro da tela.
-Centralização com Flexbox: Embora flexbox seja um assunto mais avançado, vale a pena mencioná-lo como a forma mais simples e poderosa de centralizar elementos horizontal e verticalmente ao mesmo tempo:
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-Cada método tem suas vantagens e desvantagens, e escolher o mais apropriado depende do contexto e do tipo de elemento a ser centralizado.
-"""
+Neste exemplo, o vídeo é carregado diretamente do YouTube e a largura e altura do quadro podem ser ajustadas conforme necessário. O atributo allowfullscreen permite que o usuário expanda o vídeo para tela cheia.
+O <iframe> é ideal para vídeos por não exigir o carregamento direto no servidor, economizando espaço e recursos de banda."""
 
 criar_pdf(titulo, conteudo)
